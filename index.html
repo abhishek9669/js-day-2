@@ -1,36 +1,101 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Document</title>
-        <style>
 
-        </style>
-        
-    </head>
-    <body>
-        <div id="a1">hello</div>
-        <div id="a2">abhishek</div>
-        <script>
-            document.getElementById('a1').innerHTML = 'Welcome to oklabs';
-            document.getElementById('a2').innerHTML = 'my name is abhishek';
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #clockContainer {
+            position: relative;
+            margin: auto;
+            height: 440px;
+            width: 440px;
+            background: url(./img/th.jfif) no-repeat;
+            background-size: 100%;
+        }
 
-            var x;
-            x = 20;
+        .a1 {
+            position: absolute;
+            background: black;
+            border-radius: 10px;
+            transform-origin: bottom;
+        }
 
-            var y;
-            y = 81;
+        #hour {
+            width: 18px;
+            height: 96px;
+            top: 124px;
+            right: 212px;
+            opacity: 0.8;
+        }
 
-            let z =x+y;
+        #minute {
+            width: 10px;
+            height: 118px;
+            top: 93px;
+            right: 215px;
+            opacity: 0.8;
+        }
 
-            const a=90;
-            
-            console.log(x*y);
-            console.log(x*y+z);
-            console.log(x*y+a);
+        #second {
+            width: 4px;
+            height: 155px;
+            top: 69px;
+            right: 218px;
+            opacity: 0.8;
 
-        </script>
-    </body>
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="a1">hello</div>
+    <div id="a2">abhishek</div>
+
+    <div id="clockContainer">
+        <div id="hour"class="a1 "></div>
+        <div id="minute" class="a1"></div>
+        <div id="second" class="a1"></div>
+    </div>
+
+    <script>
+        document.getElementById('a1').innerHTML = 'Welcome to oklabs';
+        document.getElementById('a2').innerHTML = 'my name is abhishek';
+
+        var x;
+        x = 20;
+
+        var y;
+        y = 81;
+
+        let z = x + y;
+
+        const a = 90;
+
+        console.log(x * y);
+        console.log(x * y + z);
+        console.log(x * y + a);
+        console.log(x / y + a);
+        console.log(x / y - z);
+        setInterval(() => {
+            d = new Date();
+            htime = d.getHours();
+            mtime = d.getMinutes();
+            stime = d.getSeconds();
+            hrotation = 30 * htime + mtime / 2;
+            mrotation = 6 * mtime;
+            srotation = 6 * stime;
+
+            hour.style.transform = `rotate(${hrotation}deg)`;
+            minute.style.transform = `rotate(${mrotation}deg)`;
+            second.style.transform = `rotate(${srotation}deg)`;
+        }, 1000);
+
+
+    </script>
+</body>
+
 </html>

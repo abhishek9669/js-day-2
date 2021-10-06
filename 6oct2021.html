@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+
+        </style>
+        <script>
+            //1. funcation defination
+            function myFunction(a,b){ // Formal arguments/parametr
+                //funcation body
+                return a-b;
+            }
+            // 2. Funcation calling
+            let z = myFunction(50,30); // actual arguments/parametr
+            console.log(z);
+            //alert(z);
+            // alert is a pre defined funcation
+            var c = myFunction(50,myFunction(50, myFunction(80,70)))
+            
+
+            var students = ["abhishek",'avinash',"Ravi","Nps"];
+
+            console.log("Hello " +students[0]+" How are you ?");
+
+            function greet(a){
+                console.log("Hello " +a+" How are you ?");
+            }
+            for(let i=0;i<=3;i++){   //for loop start
+                greet(students[i]);   
+            }  
+            var carname = [ "maruti","hyundai",'jeep','toyota',"mahindra",]
+
+            function car(b){
+                console.log("Hello " +b);
+            }
+
+            for(let i=0;i<=3;i++){   //for loop start
+                car(carname[i]);   
+            } 
+        </script>
+    </head>
+    <body>
+
+
+        <script>
+
+        </script>
+    </body>
+</html>
